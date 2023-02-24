@@ -16,17 +16,13 @@
 // THEN this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions
 // WHEN I click on the links in the Table of Contents
 // THEN I am taken to the corresponding section of the README
+
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
-// const { writeFile } = require('fs').promises;
+
 const fs = require("fs");
 
-// TODO: Create an array of questions for user input
-// const questions = [];
-
-// const questions = () => {
-//     return
 inquirer
   .prompt([
     {
@@ -36,22 +32,22 @@ inquirer
     },
     {
       type: "input",
-      name: "project-description",
+      name: "proDes",
       message: "Please give a description of your project",
     },
     {
       type: "input",
-      name: "installation-instructions",
+      name: "inst",
       message: "Please describe the installation description for your project",
     },
     {
       type: "input",
-      name: "usage-info",
+      name: "useInf",
       message: "Please enter usage information",
     },
     {
       type: "input",
-      name: "contribution",
+      name: "contGuide",
       message: "Please enter contribution guidelines",
     },
     {
@@ -75,34 +71,19 @@ inquirer
 
   .then((answers) => {
     let title = answers.title;
+    let proDes = answers.proDes;
+    let inst = answers.inst;
+    let useInf = answers.useInf;
+    let contGuide = answers.contGuide;
+    let test = answers.test;
+
+
+
 
     fs.writeFile("README.md", generateMarkdown(answers), (err) =>
       err ? console.error(err) : console.log("You did it!")
     );
   });
 
-// .then((data) => {
-//     const filename = `${data.name.toLowerCase().split(' ').join('')}.json`;
 
-//     fs.writeFile(filename, JSON.stringify(data, null, '\t'), (err) =>
-//       err ? console.log(err) : console.log('Success!')
-//     );
-//   });
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
-
-// TODO: Create a function to initialize app
-// function init() {}
-
-// function init() {
-//     questions()
-//       // Use writeFile method imported from fs.promises to use promises instead of
-//       // a callback function
-//       .then((answers) => fs.writeFile('README.md', generateMarkdown(answers)))
-//     //   .then(() => console.log('Successfully wrote to index.html'))
-//       .catch((err) => console.error(err));
-//   };
-
-// Function call to initialize app
-init();
