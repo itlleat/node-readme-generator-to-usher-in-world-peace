@@ -58,21 +58,21 @@ inquirer
       message: "Please enter test instructions",
     },
     {
-        type: "list",
-        name: "license",
-        message: "Please select a license for your application:",
-        choices: ["MIT", "GPLv2", "Apache", "GPLv3", "Unlicense", "Other"],
-      },
-      {
-        type: "input",
-        name: "user",
-        message: "Please enter your Github username:",
-      },
-      {
-        type: "input",
-        name: "email",
-        message: "Please enter contact email:",
-      },
+      type: "list",
+      name: "license",
+      message: "Please select a license for your application:",
+      choices: ["MIT", "GPLv2", "Apache", "GPLv3", "Unlicense", "Other"],
+    },
+    {
+      type: "input",
+      name: "user",
+      message: "Please enter your Github username:",
+    },
+    {
+      type: "input",
+      name: "email",
+      message: "Please enter contact email:",
+    },
   ])
 
   .then((answers) => {
@@ -85,10 +85,7 @@ inquirer
     let license = answers.license;
     let user = answers.user;
     let email = answers.email;
-        fs.writeFile("README.md", generateMarkdown(answers), (err) =>
+    fs.writeFile("README.md", generateMarkdown(answers), (err) =>
       err ? console.error(err) : console.log("README created!")
     );
   });
-
-
-
