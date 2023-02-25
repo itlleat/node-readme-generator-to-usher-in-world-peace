@@ -17,6 +17,8 @@
 // WHEN I click on the links in the Table of Contents
 // THEN I am taken to the corresponding section of the README
 
+// **THANK YOU KYLE SHAKELY
+
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
@@ -53,20 +55,24 @@ inquirer
     {
       type: "input",
       name: "test",
-      message: "Please enter test instruction",
+      message: "Please enter test instructions",
     },
     {
-      type: "checkbox",
-      message: "What languages do you know?",
-      name: "stack",
-      choices: ["HTML", "CSS", "JavaScript", "MySQL"],
-    },
-    {
-      type: "list",
-      message: "What is your preferred method of communication?",
-      name: "contact",
-      choices: ["email", "phone", "telekinesis"],
-    },
+        type: "list",
+        name: "license",
+        message: "Please select a license for your application:",
+        choices: ["MIT", "GPLv2", "Apache", "GPLv3", "Unlicense", "Other"],
+      },
+      {
+        type: "input",
+        name: "user",
+        message: "Please enter your Github username:",
+      },
+      {
+        type: "input",
+        name: "email",
+        message: "Please enter contact email:",
+      },
   ])
 
   .then((answers) => {
@@ -76,12 +82,11 @@ inquirer
     let useInf = answers.useInf;
     let contGuide = answers.contGuide;
     let test = answers.test;
-
-
-
-
-    fs.writeFile("README.md", generateMarkdown(answers), (err) =>
-      err ? console.error(err) : console.log("You did it!")
+    let license = answers.license;
+    let user = answers.user;
+    let email = answers.email;
+        fs.writeFile("README.md", generateMarkdown(answers), (err) =>
+      err ? console.error(err) : console.log("README created!")
     );
   });
 
