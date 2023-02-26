@@ -24,7 +24,7 @@ Start in the develop folder of the application and run node index.js in the term
 The Inquirer package will prompt you with questions and notify you when your README.md has been created.
 <img width="519" alt="Screen Shot 2023-02-25 at 8 25 01 PM" src="https://user-images.githubusercontent.com/118778670/221390700-e6ee6233-d3f6-45e8-8a0e-2bdf55b62e77.png">
 
-And quickly end up with a great README.md file!
+And soon you'll end up with a great README.md file!
 <img width="902" alt="Screen Shot 2023-02-25 at 7 50 36 PM" src="https://user-images.githubusercontent.com/118778670/221389745-7d33ca5f-a602-4485-866c-c7342a5019e9.png">
 
 ### Project Video Link
