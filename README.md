@@ -21,6 +21,9 @@ Welcome! This command-line application dynamically generates a professional READ
 <img width="819" alt="Screen Shot 2023-02-25 at 7 51 25 PM" src="https://user-images.githubusercontent.com/118778670/221389625-c4c3ee79-22a6-47a8-a142-325734c307a0.png">
 Start in the develop folder of the application and run node index.js in the terminal.
 
+<img width="902" alt="Screen Shot 2023-02-25 at 7 50 36 PM" src="https://user-images.githubusercontent.com/118778670/221389745-7d33ca5f-a602-4485-866c-c7342a5019e9.png">
+And quickly end up with a great README.md file!
+
 ### Project Video Link
 https://drive.google.com/file/d/1N0v6ED6CUjuR6yu-0jSCiSE0VdkujOMd/view
 ## Installation
