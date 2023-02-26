@@ -17,6 +17,8 @@
 
 ## Project Description
 Welcome! This command-line application dynamically generates a professional README.md file from a user's input using the Inquirer package. Please enjoy.
+## Link to video
+file:///Users/HOME/Downloads/Untitled_%20Feb%2025,%202023%204_08%20PM.webm
 ## Installation
 To install, simply clone the code from the repository into a folder of your choosing. From your terminal navigate to the Develop folder of the application and simply run node index.js. You will be prompted to begin your README.md file!
 ## Usage Information
