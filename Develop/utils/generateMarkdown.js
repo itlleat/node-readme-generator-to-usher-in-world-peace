@@ -1,28 +1,10 @@
-// // TODO: Create a function that returns a license badge based on which license is passed in
-// // If there is no license, return an empty string
-// function renderLicenseBadge(license) {}
-
-// // TODO: Create a function that returns the license link
-// // If there is no license, return an empty string
-// function renderLicenseLink(license) {}
-
-// // TODO: Create a function that returns the license section of README
-// // If there is no license, return an empty string
-// function renderLicenseSection(license) {}
-
-function showBadge(license) {
-  if (license !== "none") {
-    return `![Github license](https://img.shields.io/badge/license-${license}-blue.svg)`;
-  }
-  return "";
-}
-
+// // function that returns the license section of README, license link, and or badge
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   switch (license) {
     case "MIT":
       return `[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT "Click to view the MIT License on opensource.org")`;
-      case "GPLv2":
+    case "GPLv2":
       return `<details>
       <summary>GPLv2</summary>
       The GPL is a free software license, and therefore it permits people to use and even redistribute the software without being required to pay anyone a fee for doing so.
@@ -53,7 +35,7 @@ function renderLicenseLink(license) {
   }
 }
 
-// TODO: Create a function to generate markdown for README
+// function to generate markdown for README. Using <details> puts lists or long chunks of text into a nice dropdown
 function generateMarkdown(data) {
   return ` ${renderLicenseLink(data.license)}
   
@@ -93,5 +75,5 @@ ${renderLicenseLink(data.license)}
 #### ${data.email}
 `;
 }
-
+// module export to run the operation
 module.exports = generateMarkdown;

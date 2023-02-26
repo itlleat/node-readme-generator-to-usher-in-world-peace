@@ -17,14 +17,13 @@
 // WHEN I click on the links in the Table of Contents
 // THEN I am taken to the corresponding section of the README
 
-// **THANK YOU KYLE SHAKELY
-
-// TODO: Include packages needed for this application
+// **THANK YOU KYLE SHAKELY AND BEN SBOTO
+// Calling our packages
 const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
-
 const fs = require("fs");
 
+// Inquirer to run a series of prompts
 inquirer
   .prompt([
     {
@@ -75,6 +74,7 @@ inquirer
     },
   ])
 
+  // call on the titles in our prompts to link them to the user input
   .then((answers) => {
     let title = answers.title;
     let proDes = answers.proDes;
@@ -85,7 +85,8 @@ inquirer
     let license = answers.license;
     let user = answers.user;
     let email = answers.email;
+    // Using fs to turn the user inputs (answers) into markdown
     fs.writeFile("README.md", generateMarkdown(answers), (err) =>
-      err ? console.error(err) : console.log("README created!")
+      err ? console.error(err) : console.log("README created!", answers)
     );
   });
